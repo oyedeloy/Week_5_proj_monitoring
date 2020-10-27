@@ -1,0 +1,35 @@
+{
+    "variables": {
+        "aws_access_key": "",
+        "aws_secret_key": ""
+      },
+    "builders": [
+        {
+          "type": "amazon-ebs",
+          "access_key": "{{user `aws_access_key`}}",
+          "secret_key": "{{user `aws_secret_key`}}",
+          "region": "us-east-2",
+          "source_ami": "ami-03657b56516ab7912",     
+          "instance_type": "t2.micro",
+          "ssh_username": "ec2-user",
+          "ami_name": "Monitor_ami {{timestamp}}"
+        } 
+        
+      ],
+    "provisioners": [
+        {
+          "type": "file",
+          "source": "/Users/oyede/Documents/Devops/workspace/Week_5_proj_monitoring/compose2/docker-compose.yml",
+          "destination": "/home/ec2-user/"
+        },
+                      {
+            "type": "file",
+            "source": "/Users/oyede/Documents/Devops/workspace/Week_4_Docker_proj/Docker/keys/grafana/authorized_keys",
+            "destination": "/home/ec2-user/.ssh/"
+        },
+        {
+          "type": "shell",
+          "script": "monitor_script.sh"
+        }
+    ]
+    }

@@ -1,0 +1,16 @@
+version: '3.1'
+
+services: 
+  prometheus:
+      image: prom/prometheus
+      container_name: prometheus_1
+      ports: 
+        - 9090:9090
+      restart: always       
+
+  nginx:
+      image: grafana/grafana
+      container_name: grafana_1
+      ports: 
+        - 3000:3000
+      restart: always
