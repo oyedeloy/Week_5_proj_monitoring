@@ -32,10 +32,8 @@ variable "subnetCIDRblock" {
 variable "subnetCIDRblock2" {
   default = "10.9.2.0/24"
 }
-}
 variable "subnetCIDRblock3" {
   default = "10.9.3.0/24"
-}
 }
 variable "subnetCIDRblock_private" {
   default = "10.9.4.0/24"
