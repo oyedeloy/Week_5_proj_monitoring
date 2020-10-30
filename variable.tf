@@ -14,6 +14,9 @@ variable "region" {
 variable "availabilityZone" {
   default = "us-east-2a"
 }
+variable "availabilityZone2" {
+  default = "us-east-2b"
+}
 variable "instanceTenancy" {
   default = "default"
 }
@@ -37,6 +40,9 @@ variable "subnetCIDRblock3" {
 }
 variable "subnetCIDRblock_private" {
   default = "10.9.4.0/24"
+}
+variable "subnetCIDRblock_private2" {
+  default = "10.9.5.0/24"
 }
 variable "destinationCIDRblock" {
   default = "0.0.0.0/0"
