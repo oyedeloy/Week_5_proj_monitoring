@@ -14,3 +14,9 @@ services:
       ports: 
         - 3000:3000
       restart: always
+  node-exporter:
+     image: prom/node-exporter
+     container_name: node_exporter_1
+     ports: 
+       - 9100:9100
+     restart: always

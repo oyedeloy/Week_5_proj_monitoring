@@ -13,7 +13,7 @@ module "db" {
   username = "admin"
   password = "admin*123"
   port     = "3306"
-
+  multi_az = "true"
   iam_database_authentication_enabled = false
 
   vpc_security_group_ids = [aws_security_group.My_RDS_Security.id]

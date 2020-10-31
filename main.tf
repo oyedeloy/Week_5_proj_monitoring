@@ -286,7 +286,8 @@ ingress {
   
 
 resource "aws_instance" "Monitoring_node" {
-    ami                    = "ami-02ed9cf8d99e088d8"
+    ami                    = "ami-0b854eb099b3b9cafyes
+    "
     instance_type          = "t2.micro"
     subnet_id              = aws_subnet.monitoring_subnet.id
     key_name               = "devops-key2"
